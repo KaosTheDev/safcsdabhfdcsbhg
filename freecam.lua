@@ -469,6 +469,14 @@ table.insert(cors,sandbox(LocalScript0,function()
 		getgenv().StopFreecam = function()
           StopFreecam()
 		end
+		getgenv().ToggleFreecam = function()
+			if enabled then
+				StopFreecam()
+			else
+				StartFreecam()
+			end
+			enabled = not enabled
+		end
 
 		local function CheckMacro(macro)
 			for i = 1, #macro - 1 do
